@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+   <key xmlns="" attr.name="Type" attr.type="string" for="node" id="Type"/>
+   <key xmlns="" attr.name="carrier" attr.type="string" for="node" id="carrier"/>
+   <key xmlns="" attr.name="method" attr.type="string" for="node" id="method"/>
+   <key xmlns="" attr.name="Activity" attr.type="string" for="node" id="Activity"/>
+   <key xmlns="" attr.name="Timestamp" attr.type="string" for="node" id="Timestamp"/>
+   <key xmlns="" attr.name="status" attr.type="string" for="node" id="status"/>
+   <graph xmlns="" edgedefault="directed" id="G">
+      <node id="e1">
+         <data key="Activity">Order is placed</data>
+         <data key="Timestamp">Thu Nov 14 01:00:00 CET 2024</data>
+      </node>
+      <node id="o1">
+         <data key="Type">Order</data>
+         <data key="status">Thu Nov 14 01:00:00 CET 2024: isPlaced; Tue Nov 19 01:00:00 CET 2024: isShipped; Fri Nov 15 01:00:00 CET 2024: isPaid;</data>
+      </node>
+      <node id="p1">
+         <data key="Type">Payment</data>
+         <data key="method">Paypal;</data>
+      </node>
+      <node id="s1">
+         <data key="Type">Shipment</data>
+         <data key="carrier">Post;</data>
+      </node>
+      <node id="e2">
+         <data key="Activity">Payment is processed</data>
+         <data key="Timestamp">Fri Nov 15 01:00:00 CET 2024</data>
+      </node>
+      <node id="e3">
+         <data key="Activity">Order is shipped</data>
+         <data key="Timestamp">Tue Nov 19 01:00:00 CET 2024</data>
+      </node>
+      <edge id="e1-o1" source="e1" target="o1"/>
+      <edge id="o1-p1" source="o1" target="p1"/>
+      <edge id="o1-s1" source="o1" target="s1"/>
+      <edge id="e2-o1" source="e2" target="o1"/>
+      <edge id="e2-p1" source="e2" target="p1"/>
+      <edge id="e3-o1" source="e3" target="o1"/>
+      <edge id="e3-s1" source="e3" target="s1"/>
+   </graph>
+</graphml>
